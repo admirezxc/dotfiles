@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/psycho/Downloads/polybar/scripts'
+let g:netrw_dirhist_4='/home/psycho/Downloads/tigervnc-1.11.0/unix/x0vncserver'
+let g:netrw_dirhist_3='/home/psycho/.local/applications/dwm/dwm'
+let g:netrw_dirhist_2='/usr/share/xsessions'
+let g:netrw_dirhist_1='/home/psycho/.local/applications/dwm/dwm'

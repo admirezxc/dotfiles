@@ -1,0 +1,149 @@
+{
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "suggest.enablePreview": true,
+  "suggest.minTriggerInputLength": 2,
+  "suggest.defaultSortMethod": "alphabetical",
+  "suggest.triggerAfterInsertEnter": false,
+  "suggest.timeout": 500,
+  "suggest.noselect": false,
+  "suggest.detailField":"abbr",
+  "suggest.snippetIndicator": " ▨",
+  "suggest.triggerCompletionWait": 100,
+  "suggest.echodocSupport": true,
+  "suggest.completionItemKindLabels": {
+        "keyword": "\uf1de",
+        "variable": "\ue79b",
+        "value": "\uf89f",
+        "operator": "\u03a8",
+        "function": "\u2A15",
+        "reference": "\ufa46",
+        "constant": "\uf8fe",
+        "method": "\uf09a",
+        "struct": "\ufb44",
+        "class": "\uf0e8",
+        "interface": "\uf417",
+        "text": "\u2663",
+        "enum": "\uf435",
+        "enumMember": "\uf02b",
+        "module": "\uf530",
+        "color": "\ue22b",
+        "property": "\ue624",
+        "field": "\uf6a6",
+        "unit": "\uf475",
+        "event": "\ufacd",
+        "file": "\uf723",
+        "folder": "\uf114",
+        "snippet": "\ue60b",
+        "typeParameter": "\uf728", "default": "\uf29c"
+    },
+    //Snippet
+    "snippets.priority": 100,
+    "coc.preferences.snippetStatusText": " ",
+    "snippets.ultisnips.enable": true,
+    "snippets.extends": {
+        "html":["javascript"],
+        "javascript":["html"]
+    },
+    "coc.source.file.priority": 10,
+    //CocList
+    "list.source.files.defaultOptions": ["--auto-preview"],
+    "list.source.outline.defaultOptions": ["--auto-preview"],
+    //prettier
+    "prettier.statusItemText": "ⓟ ",
+    "prettier.eslintIntegration": true,
+    "prettier.tslintIntegration": true,
+    "prettier.stylelintIntegration": true,
+    "prettier.tabWidth": 4,
+    //emmet
+    "emmet.includeLanguages": {"vue-html": "html", "javascript": "javascriptreact"},
+    //sessions
+    "session.directory": "~/.cache/vim/session",
+    // coc-explorer
+    "explorer.icon.expanded": "▾",
+    "explorer.icon.collapsed": "▸",
+    "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
+		// eslint
+		"eslint.options": {
+			"configFIle": "~/.eslintrc"
+		},
+    "eslint.filetypes": ["javascript", "javascript.jsx", "javascriptreact"],
+    "eslint.autoFix": true,
+    "eslint.autoFixOnSave": true,
+    // python
+    "jedi.enable": true,
+    "jedi.trace.server": "messages",
+    "jedi.diagnostics.enable": true,
+    "jedi.diagnostics.didOpen": true,
+    "jedi.diagnostics.didChange": true,
+    "jedi.diagnostics.didSave": true,
+		// Coc Explorer
+	"explorer.keyMappings": {
+    "i": "false", // cancel default mapkey
+
+    "k": "nodePrev",
+    "j": "nodeNext",
+    "gk": "expandablePrev",
+    "gj": "expandableNext",
+
+    "*": "toggleSelection",
+    "<tab>": "actionMenu",
+
+    "h": "collapse",
+    "l": ["expandable?", "expand", "open"],
+    "J": ["toggleSelection", "nodeNext"],
+    "K": ["toggleSelection", "nodePrev"],
+    "gl": "expandRecursive",
+    "gh": "collapseRecursive",
+    "o": ["expandable?", "cd", "open"],
+    "<cr>": ["expandable?", "cd", "open"],
+    "e": "open",
+    "s": "open:split",
+    "S": "open:split:plain",
+    "E": "open:vsplit",
+    "t": "open:tab",
+    "<bs>": "gotoParent",
+    "gp": "preview:labeling",
+
+    "y": "copyFilepath",
+    "Y": "copyFilename",
+    "c": "copyFile",
+    "x": "cutFile",
+    "p": "pasteFile",
+    "d": "delete",
+    "D": "deleteForever",
+
+    "a": "addFile",
+    "A": "addDirectory",
+    "r": "rename",
+
+    ".": "toggleHidden",
+    "R": "refresh",
+
+    "?": "help",
+    "q": "quit",
+    "<esc>": "esc",
+    "X": "systemExecute",
+    "gd": "listDrive",
+
+    "f": "search",
+    "F": "searchRecursive",
+
+    "gf": "gotoSource:file",
+    "gb": "gotoSource:buffer",
+
+    "[[": "sourcePrev",
+    "]]": "sourceNext",
+
+    "[d": "diagnosticPrev",
+    "]d": "diagnosticNext",
+
+    "[c": "gitPrev",
+    "]c": "gitNext",
+    "<<": "gitStage",
+    ">>": "gitUnstage"
+		}
+
+}
+
