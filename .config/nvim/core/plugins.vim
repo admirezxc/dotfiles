@@ -1,53 +1,100 @@
 call plug#begin('~/.vim/plugged')
-    Plug 'vim-airline/vim-airline'                " statusbar
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'dracula/vim', { 'as': 'dracula' }
-	Plug 'luochen1990/rainbow'
-	Plug 'ap/vim-css-color'
-	Plug 'ryanoasis/vim-devicons'                 " add file icons
-	Plug 'honza/vim-snippets'
-	Plug 'tpope/vim-surround'
-    Plug 'kevinhwang91/rnvimr'                    " vim ranger
-  
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'honza/vim-snippets'
-    
-    Plug 'easymotion/vim-easymotion'              " edition
-    Plug 'Yggdroot/LeaderF'
+Plug 'vim-airline/vim-airline'                " statusbar
+Plug 'vim-airline/vim-airline-themes'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'luochen1990/rainbow'
+Plug 'ap/vim-css-color'
+Plug 'ryanoasis/vim-devicons'                 " add file icons
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+"Plug 'kevinhwang91/rnvimr'                    " vim ranger
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
+Plug 'bagrat/vim-buffet'
+Plug 'easymotion/vim-easymotion'              " edition
+Plug 'Yggdroot/LeaderF'
+Plug 'gcmt/wildfire.vim'
+"Plug 'terryma/vim-expand-region'
 
-    Plug 'Chiel92/vim-autoformat'
-	Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'html', 'javascript', 'vue', 'css', 'less'] }
-	Plug 'posva/vim-vue'
-    Plug 'jparise/vim-graphql'
 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+Plug 'moll/vim-bbye'
+Plug 'mcchrish/nnn.vim'
+
+"Plug 'Chiel92/vim-autoformat'
+Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'html', 'javascript', 'vue', 'css', 'less'] }
+Plug 'posva/vim-vue'
+Plug 'jparise/vim-graphql'
 call plug#end()
+
+"map <M-n> <Plug>(expand_region_expand)
+"map <m-N> <Plug>(expand_region_shrink)
+" vim-buffet {{
+let g:buffet_separator = ''
+let g:buffet_show_index = 1
+let g:buffet_tab_icon = "\uf00a"
+function! g:BuffetSetCustomColors()
+    hi! BuffetCurrentBuffer cterm=NONE ctermbg=2 ctermfg=8 guibg=#BD93f9 guifg=#000000
+    hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=2 guibg=#BD93f9 guifg=#000000
+    hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#343746 guifg=#F8F8F2
+    hi! BuffetModCurrentBufferc term=NONE ctermbg=5 ctermfg=8 guibg=#343746 guifg=#F8F8F2
+    hi! BuffetModActiveBuffer term=NONE ctermbg=5 ctermfg=8 guibg=#343746 guifg=#F8F8F2
+    hi! BuffetModBuffer term=NONE ctermbg=5 ctermfg=8 guibg=#343746 guifg=#F8F8F2
+    hi! BuffetTrunc term=NONE ctermbg=5 ctermfg=8 guibg=#343746 guifg=#F8F8F2
+    hi! BuffetTab term=NONE ctermbg=5 ctermfg=8 guibg=#343746 guifg=#F8F8F2
+endfunction
+" }}
+
+
+" nnn {{
+" Disable default mappings
+let g:nnn#set_default_mappings = 0
+
+" Then set your own
+nnoremap <silent> <leader>nn :NnnPicker<CR>
+
+
+" Or override
+" Start nnn in the current file's directory
+nnoremap <leader>n :NnnPicker %:p:h<CR>
+" Opens the nnn window in a split
+let g:nnn#layout = 'new' " or vnew, tabnew etc.
+
+" Or pass a dictionary with window size
+let g:nnn#layout = { 'left': '~20%' } " or right, up, down
+
+" Floating window (neovim latest and vim with patch 8.2.191)
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+
+" }}
+
 " autoformat {{
-let g:formatdef_custom_js = '"js-beautify -t"'
-let g:formatters_javascript = ['custom_js']
-au BufWrite *.js :Autoformat		 " autoformat
-
-
+"let g:formatdef_custom_standard = '"standard --fix --stdin 2>/dev/null"'
+"au BufWrite *.html,*.js,*.css,*.less,*.sass,*.vue  :Autoformat        " autoformat
 " }}
 
 " Beauty {{
 let g:airline_powerline_fonts = 0
 " Show buffers on top
-let g:airline#extensions#tabline#enabled=1
+"let g:airline#extensions#tabline#enabled=1
 " Show buffers count
 let g:airline#extensions#tabline#buffer_nr_show=1
 " }}
 
 
 " rnvimr {{
-    nnoremap <silent> <Leader>r :RnvimrToggle<CR>
+nnoremap <silent> <Leader>r :RnvimrToggle<CR>
 " }}
 
 " easymotion {{
-    let g:EasyMotion_smartcase = 1
-    "let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-    map J <Plug>(easymotion-jumptoanywhere)
-    " 重复上一次操作, 类似repeat插件, 很强大
-    map <leader>. <Plug>(easymotion-repeat)
+let g:EasyMotion_smartcase = 1
+"let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+map J <Plug>(easymotion-jumptoanywhere)
+" 重复上一次操作, 类似repeat插件, 很强大
+map <leader>. <Plug>(easymotion-repeat)
 " }}
 let g:Lf_PreviewInPopup = 1
 let g:Lf_PreviewCode = 1
@@ -82,32 +129,33 @@ let g:coc_status_error_sign = ''
 let g:coc_status_error_sign = ''
 let g:coc_status_warning_sign = ''
 let g:coc_global_extensions = [
-	\ 'coc-html',
-	\ 'coc-vetur',
-	\ 'coc-css',
-	\ 'coc-snippets',
-	\ 'coc-prettier',
-	\ 'coc-eslint',
-	\ 'coc-emmet',
-	\ 'coc-tsserver',
-	\ 'coc-json',
-	\ 'coc-emoji',
-	\ 'coc-lists',
-	\ 'coc-stylelint',
-	\ 'coc-template',
-	\ 'coc-marketplace',
-	\ 'coc-explorer',
-	\ 'coc-vimlsp',
-	\ 'coc-tailwindcss'
-	\ ]
-nmap <C-e> :CocCommand explorer<CR>
+            \ 'coc-html',
+            \ 'coc-vetur',
+            \ 'coc-css',
+            \ 'coc-snippets',
+            \ 'coc-eslint',
+            \ 'coc-emmet',
+            \ 'coc-tsserver',
+            \ 'coc-json',
+            \ 'coc-emoji',
+            \ 'coc-lists',
+            \ 'coc-stylelint',
+            \ 'coc-template',
+            \ 'coc-marketplace',
+            \ 'coc-explorer',
+            \ 'coc-vimlsp',
+            \ 'coc-tailwindcss'
+            \ ]
+nmap <M-a> <Esc>:CocCommand explorer<CR>
+imap <M-a> <Esc>:CocCommand explorer<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
+    " Recently vim can merge signcolumn and number column into one
+    set signcolumn=number
 else
-  set signcolumn=yes
+    set signcolumn=yes
 endif
 
 inoremap <silent><expr> <C-o> coc#refresh()
@@ -115,7 +163,7 @@ inoremap <silent><expr> <C-o> coc#refresh()
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -132,11 +180,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocActionAsync('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocActionAsync('doHover')
+    endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -145,11 +193,11 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.

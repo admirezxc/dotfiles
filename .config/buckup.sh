@@ -5,3 +5,4 @@ cp -r ~/.config/polybar ./
 cp -r ~/.config/alacritty ./
 cp -r ~/.config/fish ./
 cp -r ~/.config/nvim ./
+cp -r ~/.config/kitty ./

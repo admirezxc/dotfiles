@@ -49,12 +49,6 @@
     //CocList
     "list.source.files.defaultOptions": ["--auto-preview"],
     "list.source.outline.defaultOptions": ["--auto-preview"],
-    //prettier
-    "prettier.statusItemText": "ⓟ ",
-    "prettier.eslintIntegration": true,
-    "prettier.tslintIntegration": true,
-    "prettier.stylelintIntegration": true,
-    "prettier.tabWidth": 4,
     //emmet
     "emmet.includeLanguages": {"vue-html": "html", "javascript": "javascriptreact"},
     //sessions
@@ -64,10 +58,10 @@
     "explorer.icon.collapsed": "▸",
     "explorer.width": 30,
     "explorer.icon.enableNerdfont": true,
-		// eslint
-		"eslint.options": {
-			"configFIle": "~/.eslintrc"
-		},
+	// eslint
+	"eslint.options": {
+	    "configFIle": "~/.eslintrc"
+	},
     "eslint.filetypes": ["javascript", "javascript.jsx", "javascriptreact"],
     "eslint.autoFix": true,
     "eslint.autoFixOnSave": true,

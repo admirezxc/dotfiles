@@ -1,5 +1,7 @@
 # 字体使用Soure Code Pro
-family: UbuntuMono Nerd Font Regular
+font:
+  size: 12
+  family: JetBrains Mono Regular
 # Colors (One Dark)
 # ...
 

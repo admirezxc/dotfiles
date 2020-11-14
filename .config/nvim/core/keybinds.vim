@@ -1,6 +1,25 @@
-" Remap Leader key 
+" Remap Leader key
 let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
+
+nmap <M-1> <Plug>BuffetSwitch(1)
+nmap <M-2> <Plug>BuffetSwitch(2)
+nmap <M-3> <Plug>BuffetSwitch(3)
+nmap <M-4> <Plug>BuffetSwitch(4)
+nmap <M-5> <Plug>BuffetSwitch(5)
+nmap <M-6> <Plug>BuffetSwitch(6)
+nmap <M-7> <Plug>BuffetSwitch(7)
+nmap <M-8> <Plug>BuffetSwitch(8)
+nmap <M-9> <Plug>BuffetSwitch(9)
+nmap <M-0> <Plug>BuffetSwitch(10)
+
+nmap <M-q> <Esc>:bp<CR>
+imap <M-q> <Esc>:bp<CR>
+nmap <M-w> <Esc>:bd<CR>
+imap <M-w> <Esc>:bd<CR>
+nmap <M-e> <Esc>:bn<CR>
+imap <M-e> <Esc>:bn<CR>
+
 
 nmap <C-[> :nohl<CR>
 "        <C-p>
@@ -30,29 +49,12 @@ nmap <M-u> <Esc>caw
 imap <M-u> <Esc>caw
 
 nmap W :w<CR>
-nmap Q :q<CR>
+nmap Q :conf q<CR>
 
-map <M-i> :<C-u>bp<CR>
-map <M-o> :<C-u>bn<CR>
-map <M-c> :bdelete<CR>
-map <M-1> <Plug>BuffetSwitch(1)
-map <M-2> <Plug>BuffetSwitch(2)
-map <M-3> <Plug>BuffetSwitch(3)
-map <M-4> <Plug>BuffetSwitch(4)
-map <M-5> <Plug>BuffetSwitch(5)
-map <M-6> <Plug>BuffetSwitch(6)
-map <M-7> <Plug>BuffetSwitch(7)
-map <M-8> <Plug>BuffetSwitch(8)
-map <M-9> <Plug>BuffetSwitch(9)
-map <M-0> <Plug>BuffetSwitch(10)
+map <Leader>h :<C-u>bp<CR>
+map <Leader>l :<C-u>bn<CR>
+map <Leader>c :Bdelete<CR>
 " Coc Keybinds
 " <Tab>    snippet next
 " <S-Tab>  snippet prev
 " <C-e>	=> coc-explorer
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <M-Bslash> :TmuxNavigatePrevious<cr>

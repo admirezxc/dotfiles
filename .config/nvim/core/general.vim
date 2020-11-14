@@ -138,8 +138,8 @@ augroup END
 " ----------------
 set textwidth=80    " Text width maximum chars before wrapping
 set expandtab     " Don't expand tabs to spaces
-set tabstop=4       " The number of spaces a tab is
-set shiftwidth=4    " Number of spaces to use in auto(indent)
+set tabstop=2       " The number of spaces a tab is
+set shiftwidth=2    " Number of spaces to use in auto(indent)
 set softtabstop=-1  " Automatically keeps in sync with shiftwidth
 set smarttab        " Tab insert blanks according to 'shiftwidth'
 set autoindent      " Use same indenting on new lines
@@ -159,7 +159,6 @@ set timeoutlen=500   " Time out on mappings
 set ttimeoutlen=10   " Time out on key codes
 set updatetime=100   " Idle time to write swap and trigger CursorHold
 set redrawtime=1500  " Time in milliseconds for stopping display redraw
-
 " }}}
 
 " Searching {{{
