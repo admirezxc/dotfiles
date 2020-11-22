@@ -8,11 +8,13 @@ set -q XDG_DATA_HOME
 source $OMF_PATH/init.fish
 
 export http_proxy=http://127.0.0.1:8889
-export https_proxy=http://127.0.0.1:8889
+export https_proxy=https://127.0.0.1:8889
+#export all_proxy=socks5://127.0.0.1:1089
 alias p="sudo pacman -S"
 alias pr="sudo pacman -R"
 alias pac="sudo pacman -Ss"
 
+alias t='alacritty &'
 alias y="yay -S"
 alias yr="yay -R"
 alias ys="yay -Ss"
@@ -24,3 +26,7 @@ alias q=exit
 set fish_greeting
 export VISUAL=nvim;
 export EDITOR=nvim;
+function mkcd
+    mkdir -pv $argv;
+    cd $argv;
+end

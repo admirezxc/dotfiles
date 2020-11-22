@@ -71,7 +71,7 @@ font-1 = fixed:pixelsize=23;1
 
 modules-left = bspwm i3
 modules-center = title
-modules-right = time memory cpu
+modules-right = time network memory cpu
 
 tray-position = right
 tray-scale = 1.0
@@ -506,3 +506,9 @@ label-maxlen = 100
 ; Available tokens:
 ;   None
 label-empty-foreground = #282a36
+[module/network]
+type = internal/network
+interface = eno1
+interval = 1.0
+label-connected = "[  %upspeed%   %downspeed% ]"
+;label-connected-background = #6272A4

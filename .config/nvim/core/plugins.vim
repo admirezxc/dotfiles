@@ -13,8 +13,8 @@ Plug 'honza/vim-snippets'
 Plug 'bagrat/vim-buffet'
 Plug 'easymotion/vim-easymotion'              " edition
 Plug 'Yggdroot/LeaderF'
-Plug 'gcmt/wildfire.vim'
-"Plug 'terryma/vim-expand-region'
+"Plug 'gcmt/wildfire.vim'
+Plug 'terryma/vim-expand-region'
 
 
 Plug 'prettier/vim-prettier', {
@@ -24,15 +24,16 @@ Plug 'prettier/vim-prettier', {
 Plug 'moll/vim-bbye'
 Plug 'mcchrish/nnn.vim'
 
-"Plug 'Chiel92/vim-autoformat'
 Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'html', 'javascript', 'vue', 'css', 'less'] }
 Plug 'posva/vim-vue'
 Plug 'jparise/vim-graphql'
 call plug#end()
 
-"map <M-n> <Plug>(expand_region_expand)
-"map <m-N> <Plug>(expand_region_shrink)
+" vim-expand_region_expand{{
+nmap <CR> <Plug>(expand_region_expand)
+" }}
 " vim-buffet {{
+" 
 let g:buffet_separator = ''
 let g:buffet_show_index = 1
 let g:buffet_tab_icon = "\uf00a"
@@ -146,8 +147,7 @@ let g:coc_global_extensions = [
             \ 'coc-vimlsp',
             \ 'coc-tailwindcss'
             \ ]
-nmap <M-a> <Esc>:CocCommand explorer<CR>
-imap <M-a> <Esc>:CocCommand explorer<CR>
+nmap <C-e> <Esc>:CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.

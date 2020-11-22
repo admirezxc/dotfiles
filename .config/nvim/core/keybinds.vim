@@ -1,6 +1,8 @@
 " Remap Leader key
 let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
+nmap j gj
+
 
 nmap <M-1> <Plug>BuffetSwitch(1)
 nmap <M-2> <Plug>BuffetSwitch(2)

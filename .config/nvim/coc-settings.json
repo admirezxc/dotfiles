@@ -41,10 +41,10 @@
     "snippets.priority": 100,
     "coc.preferences.snippetStatusText": " ",
     "snippets.ultisnips.enable": true,
-    "snippets.extends": {
-        "html":["javascript"],
-        "javascript":["html"]
-    },
+    //"snippets.extends": {
+    //    "html":["javascript"],
+    //    "javascript":["html"]
+    //},
     "coc.source.file.priority": 10,
     //CocList
     "list.source.files.defaultOptions": ["--auto-preview"],
@@ -54,6 +54,7 @@
     //sessions
     "session.directory": "~/.cache/vim/session",
     // coc-explorer
+    "explorer.toggle": false,
     "explorer.icon.expanded": "▾",
     "explorer.icon.collapsed": "▸",
     "explorer.width": 30,

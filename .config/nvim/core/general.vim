@@ -137,7 +137,7 @@ augroup END
 " Tabs and Indents {{{
 " ----------------
 set textwidth=80    " Text width maximum chars before wrapping
-set expandtab     " Don't expand tabs to spaces
+set expandtab       " Don't expand tabs to spaces
 set tabstop=2       " The number of spaces a tab is
 set shiftwidth=2    " Number of spaces to use in auto(indent)
 set softtabstop=-1  " Automatically keeps in sync with shiftwidth
@@ -189,7 +189,7 @@ endif
 " Behavior {{{
 " --------
 set autoread                    " Auto readfile
-set nowrap                      " No wrap by default
+set wrap                        " No wrap by default
 set linebreak                   " Break long lines at 'breakat'
 set breakat=\ \	;:,!?           " Long lines break chars
 set nostartofline               " Cursor in same column for few commands
